@@ -1,11 +1,16 @@
 ENV['RUBYOPT'] = '-W1'
 
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+require 'rake/gempackagetask'
+
 task :environment do
-  require File.dirname(__FILE__) + '/lib/sunspot'
+  require File.expand_path (File.dirname(__FILE__) + '/lib/sunspot')
 end
 
 require File.join(File.dirname(__FILE__), 'lib', 'sunspot', 'version')
 
-Dir['tasks/**/*.rake'].each { |t| load t }
+Dir['tasks/**/*.rake'].each { |t| load File.expand_path(t) }
 
 task :default => 'spec:api'
