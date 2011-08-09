@@ -12,6 +12,7 @@ PATH
     sunspot (1.2.1)
       escape (= 0.0.4)
       pr_geohash (~> 1.0)
+      rsolr (= 0.12.1)
 
 GEM
   remote: http://rubygems.org/
